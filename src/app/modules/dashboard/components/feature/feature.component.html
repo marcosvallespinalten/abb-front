@@ -1,0 +1,29 @@
+<div *ngIf="feature" class="feature">
+  <div class="feature-header" [ngClass]=" 'f-status-' + feature.status">
+    <mat-icon>fiber_manual_record</mat-icon>
+    <h3>{{ feature.name }}</h3>
+    <span [ngSwitch]="feature.status">
+      <mat-icon>{{ featureStatusIcon(feature) }}</mat-icon>
+    </span>
+  </div>
+  <div class="feature-content">
+    <div class="feature-controls-header">
+      <div class="fc-name">Control</div>
+      <div class="flex-fill"></div>
+      <div class="fc-dev">Dev</div>
+      <div class="fc-tolerance">Dev Out Tol</div>
+      <div class="fc-status"></div>
+    </div>
+
+
+    <div *ngFor="let control of feature.controls; trackBy: trackByControl" class="feature-control">
+      <div class="fc-name">{{ control.name }}</div>
+      <div class="flex-fill"></div>
+      <div class="fc-dev">{{ control.dev }}</div>
+      <div class="fc-tolerance">{{ control.devOutTolerance }}</div>
+      <div class="fc-status" [ngClass]=" 'fc-status-' + control.status">
+        <mat-icon>{{ featureStatusIcon(control) }}</mat-icon>
+      </div>
+    </div>
+  </div>
+</div>

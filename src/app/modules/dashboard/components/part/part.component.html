@@ -1,0 +1,6 @@
+<div *ngIf="(part$ | async) as part" class="part">
+  <h1> {{part.name }}</h1>
+  <div class="features">
+    <app-feature *ngFor="let feature of part.features; trackBy: trackByFeature" [feature]="feature"></app-feature>
+  </div>
+</div>

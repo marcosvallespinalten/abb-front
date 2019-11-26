@@ -1,0 +1,21 @@
+.part {
+  display: block;
+  padding: 0 4px;
+
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: -15px;
+    margin-right: -15px;
+
+    app-feature {
+      display: flex;
+      width: 25%;
+      flex-grow: 1;
+      padding: 15px;
+    }
+  }
+}
+
+
